@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Model Rocketry Society - Our Vision, Mission, and Leadership.">
+    <title>About Us | Model Rocketry Society</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=27">
+    <style>
+        .about-hero {
+            padding-top: 180px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .student-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 300px);
+            /* Exact width for ID cards */
+            gap: 20px;
+            justify-content: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .student-card {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            width: 300px;
+            height: 400px;
+        }
+
+        .card-header {
+            padding: 0;
+            text-align: center;
+            position: relative;
+            height: 400px;
+        }
+
+        .s-logo {
+            width: 40px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .card-title-text {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            text-transform: uppercase;
+        }
+
+        .photo-frame {
+            width: 300px;
+            height: 400px;
+            margin: 0;
+            /* Removed margin to fit tightly */
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0;
+            overflow: hidden;
+            background: #fff;
+            /* White background for ID photo feel */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            object-fit: contain;
+            /* Ensures full image visibility without cropping */
+            object-position: center center;
+            display: block;
+        }
+
+        .s-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .s-role {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+        }
+
+        .card-footer {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* Executive Profile Card */
+        .executive-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .executive-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            width: 280px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .executive-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-gold);
+        }
+
+        .exec-image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        .exec-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .square-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            align-items: start;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .square-card {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .square-card:hover {
+            transform: scale(1.05);
+            border-color: var(--accent-gold);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+            z-index: 2;
+        }
+
+        .square-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+
+    <header>
+        <div class="logo"
+            style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; position: relative; background: #000;">
+            <img src="assets/mrs_logo.jpg" alt="MRS Logo"
+                style="width: 100%; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="nav-item has-dropdown">
+                    <a href="about.html" class="active">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#society">Model Rocketry Society</a></li>
+                        <li><a href="about.html#vision-section">Vision</a></li>
+                        <li><a href="about.html#mission-section">Mission</a></li>
+                        <li><a href="about.html#board-of-directors">Executive Members</a></li>
+                        <li><a href="about.html#top-gun">Our Inspiration</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#what-we-do">Objective</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item has-dropdown">
+                    <a href="index.html#membership">Membership</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#membership">Student Benefits</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="about-hero" id="society">
+            <h1 class="fade-in"
+                style="font-family: 'Orbitron', sans-serif; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 3px;">
+                Model Rocketry Society</h1>
+
+            <div class="fade-in" style="margin: 40px auto; text-align: center; max-width: 900px;">
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">The Model Rocketry Society is a
+                    student-driven community passionate about rockets, Space, and Aerospace Engineering. We bring
+                    together curious minds who love to Design, Build, and Launch Rockets while learning real Engineering
+                    skills in a fun and Practical way.</p>
+                <p style="margin-bottom: 20px;">Our society conducts Workshops, Hands-on projects, Launch Events, and
+                    Technical discussions to help students Explore Aerodynamics, Propulsion, Structures, Avionics, and
+                    Space Science beyond textbooks. We believe in learning by doing, Teamwork, Creativity, and safe
+                    rocketry practices.</p>
+                <p>Whether you are a beginner or an Aspiring Aerospace Engineer, the Model Rocketry Society provides a
+                    platform to Explore your Ideas, build Innovative projects, and prepare for Future Careers in Space
+                    and Advanced Technology.</p>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section id="mission" style="padding-top: 20px;">
+
+            <div class="mission-vision">
+                <div id="vision-section" class="card fade-in">
+                    <h3>Our Vision</h3>
+                    <p style="text-align: justify;">We envision becoming a premier student rocketry society dedicated to
+                        advancing aerospace engineering education, innovation, and research. The society aims to bridge
+                        academic knowledge with practical engineering through structured rocketry programs and
+                        experimentation. By fostering technical excellence and scientific integrity, we strive to
+                        develop future leaders in aerospace and space technology.</p>
+                </div>
+                <div id="mission-section" class="card fade-in">
+                    <h3 style="color: var(--accent-gold);">Our Mission</h3>
+                    <ul class="feature-list" style="margin-top: 15px;">
+                        <li>To provide structured training and hands-on experience in model and experimental rocketry.
+                        </li>
+                        <li>To promote research, innovation, and multidisciplinary collaboration in aerospace
+                            engineering.</li>
+                        <li>To organize technical workshops, launch campaigns, and competitions for skill development.
+                        </li>
+                        <li>To uphold the highest standards of safety, professionalism, and ethical engineering
+                            practices.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Gun Leaders -->
+        <section id="top-gun">
+            <h2 class="fade-in">Our Inspiration</h2>
+            <div class="card fade-in" style="max-width: 900px; margin: 0 auto 30px; text-align: left;">
+                <img src="assets/dr_madhavan_nair.jpg" alt="Dr. G. Madhavan Nair"
+                    style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; float: left; margin-right: 30px; border: 3px solid var(--accent-gold);">
+                <div style="overflow: hidden;">
+                    <h3 style="color: var(--accent-gold); margin-top: 0;">DR. G. MADHAVAN NAIR</h3>
+                    <div style="display: flex; gap: 10px; margin: 10px 0 20px; flex-wrap: wrap;">
+                        <span
+                            style="background: rgba(76, 201, 240, 0.1); color: var(--accent-blue); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; border: 1px solid rgba(76, 201, 240, 0.3); text-transform: uppercase; letter-spacing: 1px;">Ex
+                            ISRO Chairman</span>
+                        <span
+                            style="background: rgba(255, 255, 255, 0.05); color: var(--text-main); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; border: 1px solid var(--glass-border); text-transform: uppercase; letter-spacing: 1px;">Distinguished
+                            Space Scientist</span>
+                    </div>
+                    <p>Dr. G. Madhavan Nair is a renowned Indian space scientist and former Chairman of the Indian Space
+                        Research Organisation (ISRO), with several decades of experience in leading space technology and
+                        space missions for the nation. Dr. Nair has been instrumental in promoting India's space
+                        development efforts in areas such as satellite launch vehicles, remote sensing, and space
+                        exploration missions. He is currently the principal head and mentor of the Model Rocketry
+                        Society, leading the society's vision and strategy.</p>
+                </div>
+            </div>
+
+            <div class="card fade-in" style="max-width: 900px; margin: 0 auto; text-align: left;">
+                <div
+                    style="width: 200px; height: 200px; border-radius: 50%; float: left; margin-right: 30px; border: 3px solid var(--accent-gold); overflow: hidden;">
+                    <img src="assets/mrk_menon_topgun.png" alt="Dr. M. R. K. Menon"
+                        style="width: 100%; height: 100%; object-fit: cover; object-position: center 10%; transform: scale(1.15);">
+                </div>
+                <div style="overflow: hidden;">
+                    <h3 style="color: var(--accent-gold); margin-top: 0;">DR. M. R. K. MENON</h3>
+                    <div style="display: flex; gap: 10px; margin: 10px 0 20px; flex-wrap: wrap;">
+                        <span
+                            style="background: rgba(76, 201, 240, 0.1); color: var(--accent-blue); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; border: 1px solid rgba(76, 201, 240, 0.3); text-transform: uppercase; letter-spacing: 1px;">CEO
+                            - Global Aerosports</span>
+                        <span
+                            style="background: rgba(255, 209, 102, 0.1); color: var(--accent-gold); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; border: 1px solid rgba(255, 209, 102, 0.3); text-transform: uppercase; letter-spacing: 1px;">Secretary
+                            - Model Rocketry Society</span>
+                    </div>
+                    <p>Dr. (Hon.) M. R. K. Menon is a pioneer in Aeromodelling, Model Rocketry, Drone Technology,
+                        Robotics, and Space Technology with 20+ years of global experience in STEM education. He has
+                        trained over 100,000 students and 200+ teachers across multiple countries and is the Secretary
+                        of the Model Rocketry Society and Adviser to leading aerospace organizations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Members -->
+        <section id="board-of-directors">
+            <h2 class="fade-in">Executive Members</h2>
+            <div class="fade-in"
+                style="max-width: 1000px; margin: 0 auto; background: var(--glass-bg); padding: 30px; border-radius: 20px; border: 1px solid var(--glass-border); text-align: left;">
+
+                <h3
+                    style="color: var(--accent-blue); margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+                    Advisory Board</h3>
+                <div class="executive-grid">
+                    <div class="executive-card">
+                        <div class="exec-image"><img src="assets/kk_ashraf.jpg" alt="Mr. K. K. Ashraf"></div>
+                        <div class="exec-info">
+                            <h3>Mr. K. K. Ashraf</h3>
+                            <p class="role">Honourable Chairman</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3
+                    style="color: var(--accent-blue); margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+                    Executive Committee</h3>
+                <div class="executive-grid">
+                    <div class="executive-card">
+                        <div class="exec-image"><img src="assets/viswesh_chavan.png" alt="Mr. Viswesh Chavan"></div>
+                        <div class="exec-info">
+                            <h3>Mr. Viswesh Chavan</h3>
+                            <p class="role">President</p>
+                        </div>
+                    </div>
+                    <div class="executive-card">
+                        <div class="exec-image"><img src="assets/rajesh_muneshwar.jpg" alt="Mr. Rajesh Muneshwar"></div>
+                        <div class="exec-info">
+                            <h3>Mr. Rajesh Muneshwar</h3>
+                            <p class="role">Vice President</p>
+                        </div>
+                    </div>
+                    <div class="executive-card">
+                        <div class="exec-image"><img src="assets/mrk_menon_topgun.png" alt="Dr. M. R. K. Menon"
+                                style="width: 100%; height: 100%; object-fit: cover; object-position: center 10%; transform: scale(1.15);">
+                        </div>
+                        <div class="exec-info">
+                            <h3>Dr. M. R. K. Menon</h3>
+                            <p class="role">Secretary</p>
+                        </div>
+                    </div>
+                    <div class="executive-card">
+                        <div class="exec-image"><img src="assets/vijetha_ezhil.png" alt="Miss Vijetha Ezhil"></div>
+                        <div class="exec-info">
+                            <h3>Vijetha Ezhill</h3>
+                            <p class="role">Treasurer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3
+                    style="color: var(--accent-blue); margin-bottom: 20px; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px;">
+                    Executive Members</h3>
+                <div class="executive-grid">
+                    <div class="executive-card">
+                        <div class="exec-image"><img src="assets/angel_eluvathingal.jpg" alt="Angel Eluvathingal"
+                                style="object-position: top;"></div>
+                        <div class="exec-info">
+                            <h3>Angel Eluvathingal</h3>
+                        </div>
+                    </div>
+                    <div class="executive-card">
+                        <div class="exec-image"><img src="assets/arthana_kr.jpg" alt="Arthana K. R."
+                                style="object-position: top;"></div>
+                        <div class="exec-info">
+                            <h3>Arthana K. R.</h3>
+                        </div>
+                    </div>
+                    <div class="executive-card">
+                        <div class="exec-image"><img src="assets/vivel_nelson.png" alt="Vivel Nelson"
+                                style="object-position: top;"></div>
+                        <div class="exec-info">
+                            <h3>Vivel Nelson</h3>
+                        </div>
+                    </div>
+                    <div class="executive-card">
+                        <div class="exec-image"><img src="assets/abhigna.png" alt="Abhigna Y."
+                                style="object-position: top;"></div>
+                        <div class="exec-info">
+                            <h3>Abhigna Y.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Student Members -->
+        <section id="student-members">
+            <h2 class="fade-in">Our Future Aviators, Astronauts, Scientists and Engineers!</h2>
+            <div class="square-grid fade-in">
+                <div class="square-card"><img src="assets/d1.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d2.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d3.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d4.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d5.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d6.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d7.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d8.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d9.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d10.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d11.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d12.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d13.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d14.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d15.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d16.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d17.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d18.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d19.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d20.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d21.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d22.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d23.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d24.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d25.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d26.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d27.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d28.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d29.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d30.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d31.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d32.jpeg" alt="Future Aviator" loading="lazy"></div>
+                <div class="square-card"><img src="assets/d33.jpeg" alt="Future Aviator" loading="lazy"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="logo"
+            style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; position: relative; background: #000;">
+            <img src="assets/mrs_logo.jpg" alt="MRS Logo"
+                style="width: 100%; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/modelrocketrysociety.mrs?igsh=MTZjbWo2dXBncnV1Mg==" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/company/model-rocketry-society/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/modelrocke34987" target="_blank">X</a>
+
+        </div>
+        <p>&copy; 2016 Model Rocketry Society. All Rights Reserved.</p>
+        <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px;">Designed and Developed by CSE Department
+            Students, Royal College of Engineering and Technology</p>
+    </footer>
+
+    <script src="app.js?v=28"></script>
+</body>
+
+</html>

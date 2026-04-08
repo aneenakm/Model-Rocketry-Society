@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Model Rocketry Society Gallery - Explore our projects, sessions, and events.">
+    <title>Gallery | Model Rocketry Society</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Outfit:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css?v=27">
+    <style>
+        .gallery-header {
+            padding-top: 200px;
+            /* Increased to move title down as requested */
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding-bottom: 80px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+
+
+        /* Modal Overlay */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 50px rgba(0, 180, 216, 0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+
+    <header>
+        <div class="logo"
+            style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; position: relative; background: #000;">
+            <img src="assets/mrs_logo.jpg" alt="Model Rocketry Society Logo"
+                style="width: 100%; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li class="nav-item has-dropdown">
+                    <a href="about.html">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#society">Model Rocketry Society</a></li>
+                        <li><a href="about.html#vision-section">Vision</a></li>
+                        <li><a href="about.html#mission-section">Mission</a></li>
+                        <li><a href="about.html#board-of-directors">Our Executive Members</a></li>
+                        <li><a href="about.html#top-gun">Our Inspiration</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#what-we-do">Objective</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li class="nav-item has-dropdown">
+                    <a href="index.html#membership">Membership</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#membership">Student Benefits</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="gallery-header">
+            <h1 class="fade-in" style="font-family: 'Orbitron', sans-serif; color: var(--accent-gold);">Our Gallery</h1>
+            <p class="fade-in" style="max-width: 700px; margin: 0 auto;">Explore the exciting sessions, hands-on
+                projects, and interstellar events of the Model Rocketry Society.</p>
+        </section>
+
+        <section id="gallery">
+
+
+            <div class="gallery-grid fade-in">
+                <!-- Gallery items -->
+                <div class="gallery-item">
+                    <img src="assets/kalam_visit.jpg" alt="Dr. A.P.J. Abdul Kalam Visit">
+                    <div class="overlay">
+                        <h4>Inspirational Visit</h4>
+                        <p>Honored to have Dr. A.P.J. Abdul Kalam inspire our members.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/aerospace_lab.jpg" alt="Aerospace Lab">
+                    <div class="overlay">
+                        <h4>Aero Space Lab</h4>
+                        <p>Our dedicated space for research and development.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/telescope_session.jpg" alt="Telescope Session">
+                    <div class="overlay">
+                        <h4>Stargazing Session</h4>
+                        <p>Exploring the cosmos through our astronomy sessions.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/model_airplane_demo.jpg" alt="Model Airplane Demo">
+                    <div class="overlay">
+                        <h4>Aero Modelling</h4>
+                        <p>Demonstrating the principles of flight with model aircraft.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/workshop_session.jpg" alt="Workshop Session">
+                    <div class="overlay">
+                        <h4>Hands-on Workshop</h4>
+                        <p>Students engaged in building and learning rocketry basics.</p>
+                    </div>
+                </div>
+                <!-- Batch 2 -->
+                <div class="gallery-item">
+                    <img src="assets/indian_navy_exhibition.jpg" alt="Indian Navy Exhibition">
+                    <div class="overlay">
+                        <h4>Indian Navy Exhibition</h4>
+                        <p>Exploring naval technology and aerospace links.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/students_model_aircraft.jpg" alt="Student Projects">
+                    <div class="overlay">
+                        <h4>Student Projects</h4>
+                        <p>Members working on advanced model aircraft.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/rocket_schematic.jpg" alt="Rocket Design">
+                    <div class="overlay">
+                        <h4>Rocket Design</h4>
+                        <p>Detailed schematic of our latest rocket prototype.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/flight_computer.jpg" alt="Flight Electronics">
+                    <div class="overlay">
+                        <h4>Flight Electronics</h4>
+                        <p>Custom-built flight computer for data telemetry.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/air_mk2_rocket.jpg" alt="Air MK2 Rocket">
+                    <div class="overlay">
+                        <h4>Air MK2 Rocket</h4>
+                        <p>Full-scale model of the Air MK2 high-altitude rocket.</p>
+                    </div>
+                </div>
+                <!-- Batch 3 -->
+                <div class="gallery-item">
+                    <img src="assets/rocket_team.jpg" alt="Rocketry Team">
+                    <div class="overlay">
+                        <h4>Rocketry Team</h4>
+                        <p>Our passionate team of students and mentors ready for launch.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/sky_surfer_students.jpg" alt="Sky Surfer Project">
+                    <div class="overlay">
+                        <h4>Sky Surfer Project</h4>
+                        <p>Students demonstrating the Sky Surfer model aircraft.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/innovation_lab.jpg" alt="Innovation Lab">
+                    <div class="overlay">
+                        <h4>Innovation Lab</h4>
+                        <p>Inside our workspace where ideas take flight.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/uav_experts.jpg" alt="UAV Experts">
+                    <div class="overlay">
+                        <h4>UAV Experts</h4>
+                        <p>A team of specialists presenting our latest UAV prototype.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/heavy_air_rocket.jpg" alt="Heavy Air Rocket">
+                    <div class="overlay">
+                        <h4>Heavy Air Rocket</h4>
+                        <p>Constructing the heavy-duty rocket for high-altitude testing.</p>
+                    </div>
+                </div>
+                <!-- Batch 4 -->
+                <div class="gallery-item">
+                    <img src="assets/g1.jpeg" alt="Gallery Photo 1">
+                    <div class="overlay">
+                        <h4>MRS Highlights</h4>
+                        <p>Capturing the spirit of the Model Rocketry Society.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/g2.jpeg" alt="Gallery Photo 2">
+                    <div class="overlay">
+                        <h4>MRS Highlights</h4>
+                        <p>Moments from our exciting rocketry events.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/g3.jpeg" alt="Gallery Photo 3">
+                    <div class="overlay">
+                        <h4>MRS Highlights</h4>
+                        <p>Innovation and teamwork in action.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/g4.jpeg" alt="Gallery Photo 4">
+                    <div class="overlay">
+                        <h4>MRS Highlights</h4>
+                        <p>Students exploring the frontiers of aerospace.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/g5.jpeg" alt="Gallery Photo 5">
+                    <div class="overlay">
+                        <h4>MRS Highlights</h4>
+                        <p>Hands-on learning and discovery.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/g6.jpeg" alt="Gallery Photo 6">
+                    <div class="overlay">
+                        <h4>MRS Highlights</h4>
+                        <p>Building the future of rocketry together.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/g7.jpeg" alt="Gallery Photo 7">
+                    <div class="overlay">
+                        <h4>MRS Highlights</h4>
+                        <p>Inspiring the next generation of aerospace enthusiasts.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/g8.jpeg" alt="Gallery Photo 8">
+                    <div class="overlay">
+                        <h4>MRS Highlights</h4>
+                        <p>Reaching for the stars, one launch at a time.</p>
+                    </div>
+                </div>
+                <!-- Batch 5 -->
+                <div class="gallery-item">
+                    <img src="assets/gallery_new_1.jpg" alt="Space Exhibition Display">
+                    <div class="overlay">
+                        <h4>Space Exhibition</h4>
+                        <p>Engaging with global aerospace displays and rockets.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery_new_2.jpg" alt="Test Rocket Launch">
+                    <div class="overlay">
+                        <h4>Test Rocket Launch</h4>
+                        <p>A successful vertical lift-off of a test rocket model.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery_new_4.jpg" alt="Spaceverse VTHL Launch Vehicle">
+                    <div class="overlay">
+                        <h4>Spaceverse Launch Vehicle</h4>
+                        <p>Presenting the VTHL Space Launch Vehicle model.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/gallery_new_5.jpg" alt="KOCMOC Rocket Component">
+                    <div class="overlay">
+                        <h4>KOCMOC Rocket Display</h4>
+                        <p>Exploring significant aerospace hardware history.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="modal" id="imageModal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <footer>
+        <div class="logo"
+            style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; position: relative; background: #000;">
+            <img src="assets/mrs_logo.jpg" alt="Model Rocketry Society Logo"
+                style="width: 100%; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/modelrocketrysociety.mrs?igsh=MTZjbWo2dXBncnV1Mg==" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/company/model-rocketry-society/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/modelrocke34987" target="_blank">X</a>
+
+        </div>
+        <p>&copy; 2016 Model Rocketry Society. All Rights Reserved.</p>
+        <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px;">Designed and Developed by CSE Department
+            Students, Royal College of Engineering and Technology</p>
+    </footer>
+
+    <script src="app.js?v=28"></script>
+    <script>
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        // Lightbox Logic
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const closeBtn = document.querySelector('.close-modal');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img');
+                modal.style.display = 'flex';
+                modalImg.src = img.src;
+            });
+        });
+
+        closeBtn.onclick = () => {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+
+</html>
