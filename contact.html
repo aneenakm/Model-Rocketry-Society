@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Model Rocketry Society</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=27">
+    <style>
+        .contact-container {
+            max-width: 1000px;
+            margin: 180px auto 60px;
+            /* Increased margin-top to move title down */
+            padding: 0 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .info-item h4 {
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+        }
+
+        .feedback-section {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .star {
+            color: #444;
+            transition: color 0.2s;
+        }
+
+        .star.active {
+            color: var(--accent-gold);
+        }
+
+        .comment-box {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 15px;
+            color: white;
+            font-family: inherit;
+            margin-bottom: 20px;
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .comments-display {
+            margin-top: 60px;
+        }
+
+        .comment-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .comment-stars {
+            color: var(--accent-gold);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo"
+            style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; position: relative; background: #000;">
+            <img src="assets/mrs_logo.jpg" alt="Model Rocketry Society Logo"
+                style="width: 100%; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li class="nav-item has-dropdown">
+                    <a href="about.html">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html#society">Model Rocketry Society</a></li>
+                        <li><a href="about.html#vision-section">Vision</a></li>
+                        <li><a href="about.html#mission-section">Mission</a></li>
+                        <li><a href="about.html#board-of-directors">Our Executive Members</a></li>
+                        <li><a href="about.html#top-gun">Our Inspiration</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#what-we-do">Objective</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li class="nav-item has-dropdown">
+                    <a href="index.html#membership">Membership</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html#membership">Student Benefits</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+        <h2 class="fade-in">Contact Us</h2>
+
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="contact-info-card fade-in">
+                <h3>Get in Touch</h3>
+                <div class="info-item">
+                    <div>
+                        <h4>📍 Address</h4>
+                        <p>Model Rocketry Society c/o Global Aerosports,<br>
+                            2nd Floor, Regency Complex, Karikath Lane,<br>
+                            Thrissur, Kerala Pin: 680001
+                        </p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <h4 style="margin-top: 20px;">📞 Phone Number</h4>
+                        <p>+91 9746335285</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div>
+                        <h4>✉️ Email</h4>
+                        <p>mrk.menon@yahoo.com<br>
+                        modelrocketrysocietymrs@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Form -->
+            <div class="feedback-section fade-in">
+                <h3>Share Your Experience</h3>
+                <p>We value your feedback! Rate us and leave a comment.</p>
+
+                <div class="star-rating" id="starRating">
+                    <span class="star" data-rating="1">★</span>
+                    <span class="star" data-rating="2">★</span>
+                    <span class="star" data-rating="3">★</span>
+                    <span class="star" data-rating="4">★</span>
+                    <span class="star" data-rating="5">★</span>
+                </div>
+
+                <textarea id="userComment" class="comment-box" placeholder="Write your thoughts here..."></textarea>
+                <button onclick="submitFeedback()" class="btn" style="width: 100%;">Submit Feedback</button>
+            </div>
+        </div>
+
+        <!-- Comments List -->
+        <div class="comments-display fade-in">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h3>Community Reviews</h3>
+                <button id="toggleBtn" class="btn btn-outline" onclick="toggleComments()">See All Comments</button>
+            </div>
+            <div id="commentsList">
+                <!-- Comments will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo"
+            style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; position: relative; background: #000;">
+            <img src="assets/mrs_logo.jpg" alt="Model Rocketry Society Logo"
+                style="width: 100%; height: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/modelrocketrysociety.mrs?igsh=MTZjbWo2dXBncnV1Mg==" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/company/model-rocketry-society/" target="_blank">LinkedIn</a>
+            <a href="https://x.com/modelrocke34987" target="_blank">X</a>
+
+        </div>
+        <p>&copy; 2016 Model Rocketry Society. All Rights Reserved.</p>
+        <p style="font-size: 0.85rem; opacity: 0.8; margin-top: 10px;">Designed and Developed by CSE Department
+            Students, Royal College of Engineering and Technology</p>
+    </footer>
+
+    <script src="app.js?v=28"></script>
+    <script>
+        // Local state for the contact page
+        let currentRating = 0;
+        let showingAll = false;
+        const stars = document.querySelectorAll('.star');
+
+        // Sample Data for demonstration
+        const sampleFeedback = [
+            { rating: 5, comment: "Amazing society! The workshops are very educational.", date: "01/02/2026", id: 1 },
+            { rating: 4, comment: "I love the new website design. Very classy.", date: "03/02/2026", id: 2 },
+            { rating: 5, comment: "Model Rocketry Society changed my perspective on rocketry. Highly recommended for students!", date: "04/02/2026", id: 3 },
+            { rating: 4, comment: "Great community support.", date: "05/02/2026", id: 4 }
+        ];
+
+        // Always load sample feedback
+        localStorage.setItem('mrs_feedback', JSON.stringify(sampleFeedback));
+
+        stars.forEach(s => {
+            s.addEventListener('mouseover', () => highlightStars(s.dataset.rating));
+            s.addEventListener('mouseout', () => highlightStars(currentRating));
+            s.addEventListener('click', () => {
+                currentRating = s.dataset.rating;
+                highlightStars(currentRating);
+            });
+        });
+
+        function highlightStars(rating) {
+            stars.forEach(s => {
+                s.classList.toggle('active', s.dataset.rating <= rating);
+            });
+        }
+
+        function submitFeedback() {
+            const comment = document.getElementById('userComment').value;
+            if (currentRating === 0) return alert('Please select a star rating!');
+            if (!comment.trim()) return alert('Please enter a comment!');
+
+            const feedback = {
+                rating: parseInt(currentRating),
+                comment: comment,
+                date: new Date().toLocaleDateString(),
+                id: Date.now()
+            };
+
+            const existing = JSON.parse(localStorage.getItem('mrs_feedback') || '[]');
+            existing.unshift(feedback);
+            localStorage.setItem('mrs_feedback', JSON.stringify(existing));
+
+            document.getElementById('userComment').value = '';
+            currentRating = 0;
+            highlightStars(0);
+
+            renderComments();
+            alert('Thank you for your feedback!');
+        }
+
+        function renderComments() {
+            const list = document.getElementById('commentsList');
+            const toggleBtn = document.getElementById('toggleBtn');
+            const feedback = JSON.parse(localStorage.getItem('mrs_feedback') || '[]');
+
+            const displayList = showingAll ? feedback : feedback.slice(0, 3);
+
+            list.innerHTML = displayList.map(f => `
+                <div class="comment-card fade-in">
+                    <div class="comment-header">
+                        <div class="comment-stars">${'★'.repeat(f.rating)}${'☆'.repeat(5 - f.rating)}</div>
+                        <span style="color: var(--text-muted); font-size: 0.8rem;">${f.date}</span>
+                    </div>
+                    <p style="margin: 0;">${f.comment}</p>
+                </div>
+            `).join('');
+
+            if (feedback.length === 0) {
+                list.innerHTML = '<p style="text-align: center; color: var(--text-muted);">No reviews yet. Be the first!</p>';
+                toggleBtn.style.display = 'none';
+            } else if (feedback.length <= 3) {
+                toggleBtn.style.display = 'none';
+            } else {
+                toggleBtn.style.display = 'block';
+                toggleBtn.innerText = showingAll ? 'See Less' : 'See All Comments';
+            }
+
+            // Trigger animation
+            setTimeout(() => {
+                const newCards = list.querySelectorAll('.comment-card');
+                newCards.forEach(c => c.classList.add('visible'));
+            }, 10);
+        }
+
+        function toggleComments() {
+            showingAll = !showingAll;
+            renderComments();
+        }
+
+        // Initial render
+        renderComments();
+    </script>
+</body>
+
+</html>
